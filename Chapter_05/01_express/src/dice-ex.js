@@ -13,13 +13,19 @@ app.get('/', (req, res) => {
     '<a href="/dice/12">12면체 주사위</a></p>'
   )
 })
-// 주사위 페이지에 접근할 때 --- (※1)
+// 콜론(:)을 이용하면 path variable 을 사용할 수 있다.
+// 값을 사용할 때에는 req.params 를 사용하여 추출한다.
 app.get('/dice/:num', (req, res) => {
   res.send(
     '<p>주사위의 값은...' + dice(req.params.num) +
     '<br /><a href="/">뒤로</a></p>'
   )
 })
+
+// 라우트 경로를 정규표현식 매칭으로
+app.get(/.*fly$/, (req, res) => {
+  res.send('/.*fly$/');
+});
 
 function dice(n) {
   return Math.floor(Math.random() * n) + 1

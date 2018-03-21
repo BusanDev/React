@@ -6,7 +6,7 @@ const express = require('express')
 const app = express()
 const portNo = 3000
 
-// 루트에 접근할 때
+// 매개변수가 추가되어 있다면, req.query 를 사용해서 추출 가능하다.
 app.get('/', (req, res) => {
   if (!req.query.q) {
     res.send(
