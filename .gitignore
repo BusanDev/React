@@ -2,6 +2,5 @@
 
 \.idea/
 
-Chapter_05/01_express_test/node_modules/
+*node_modules/
 
-Chapter_05/02_flux_test/node_modules/
